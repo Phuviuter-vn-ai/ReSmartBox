@@ -27,7 +27,7 @@ const demoVideos = {
   },
   nhaHang: {
     src: "video_demo/videodemosanpham_nhaHang.mp4",
-    poster: "Anh_lap_dat/1793058593230_2398951114998525015_g8308076797534140497_6dd2fde8cee98170dfd0bf63b41ec104.jpg",
+    poster: "Minh Chứng/Đã thử nghiệm/Eden Restaurant - Hai san Eden (anh mat tien).jpg",
     title: "Nhà hàng",
   },
 };
@@ -53,5 +53,180 @@ document.querySelectorAll(".demo-tab").forEach((tab) => {
     demoTitle.textContent = demo.title;
   });
 });
+
+const trialDocuments = [
+  { name: "Bích tóc", category: "Dịch vụ làm đẹp", file: "Bich toc.png" },
+  { name: "Công ty Cổ phần Hoàng Anh Agritech", category: "Nông nghiệp & doanh nghiệp", file: "Cong ty CP Hoang Anh Agritech.png" },
+  { name: "Công ty Cổ phần Thương mại Thái Kim", category: "Thương mại & đồ uống", file: "Cong ty CP Thuong mai Thai Kim.png" },
+  { name: "Công ty TNHH Thương mại và Dịch vụ Vilafa", category: "Doanh nghiệp & dịch vụ", file: "Cong ty TNHH TM va DV Vilafa.png" },
+  { name: "DAV Media", category: "Truyền thông & quảng cáo", file: "DAV Media.png" },
+  { name: "Eden Restaurant – Hải sản Eden", category: "Nhà hàng & ẩm thực", file: "Eden Restaurant - Hai san Eden.png" },
+  { name: "Lima Coffee and Tea House", category: "Cà phê & đồ uống", file: "Lima coffee and tea house.png" },
+  { name: "Mini Mart Tuấn Hậu", category: "Cửa hàng tiện lợi", file: "Mini Mart Tuan Hau.png" },
+  { name: "Nhà văn hóa tổ 3, phường Phúc Yên", category: "Không gian cộng đồng", file: "Nha van hoa to 3 phuong Phuc Yen.png" },
+  { name: "Phòng khám gia đình", category: "Y tế & chăm sóc sức khỏe", file: "Phong kham gia dinh.png" },
+  { name: "Phúc Yên Hotel", category: "Khách sạn & lưu trú", file: "Phuc Yen Hotel.png" },
+  { name: "Quân Dung Mobile", category: "Công nghệ & bán lẻ", file: "Quan Dung Mobile.png" },
+  { name: "Trạm dừng nghỉ Phước An", category: "Dịch vụ & điểm dừng nghỉ", file: "Tram dung nghi Phuoc An.png" },
+  { name: "Trường THCS Phúc Yên", category: "Giáo dục & thư viện", file: "Truong THCS Phuc Yen.jpg" },
+  { name: "Trường THPT Hai Bà Trưng", category: "Giáo dục & thư viện", file: "Truong THPT Hai Ba Trung.png" },
+  { name: "Tuan Agency", category: "Truyền thông & quảng cáo", file: "Tuan Agency.png" },
+].map((document) => ({
+  ...document,
+  group: "trial",
+  groupLabel: "ĐƠN VỊ DÙNG THỬ",
+  path: `Minh Chứng/Đã thử nghiệm/${document.file}`,
+}));
+
+const sponsorDocuments = [
+  {
+    name: "Công ty Cổ phần Hoàng Anh Agritech",
+    category: "Nông nghiệp & doanh nghiệp",
+    file: "Cong ty CP Hoang Anh Agritech.png",
+  },
+  {
+    name: "Công ty Cổ phần Thương mại Thái Kim",
+    category: "Thương mại & đồ uống",
+    file: "Cong ty CP Thuong mai Thai Kim.png",
+  },
+  {
+    name: "Công ty TNHH Dịch vụ Bảo vệ Chuyên nghiệp An Ninh Việt Nam",
+    category: "An ninh & dịch vụ",
+    file: "Cong ty TNHH DV Bao ve Chuyen nghiep An Ninh Viet Nam.png",
+  },
+  {
+    name: "Công ty TNHH Thương mại và Dịch vụ Vilafa",
+    category: "Doanh nghiệp & dịch vụ",
+    file: "Cong ty TNHH TM va DV Vilafa.png",
+  },
+  { name: "DAV Media", category: "Truyền thông & quảng cáo", file: "DAV Media.png" },
+  { name: "Trạm dừng nghỉ Phước An", category: "Dịch vụ & điểm dừng nghỉ", file: "Tram dung nghi Phuoc An.png" },
+].map((document) => ({
+  ...document,
+  group: "sponsor",
+  groupLabel: "ĐƠN VỊ TÀI TRỢ",
+  path: `Minh Chứng/Tài trợ/${document.file}`,
+}));
+
+const sponsors = [
+  {
+    name: "Công ty Cổ phần Hoàng Anh Agritech",
+    mark: "HA",
+    logo: "Minh Chứng/Tài trợ/Cong ty CP Hoang Anh Agritech (logo).png",
+    contribution: "100 TV Box đã qua sử dụng · quy đổi 20 triệu đồng",
+    document: sponsorDocuments[0],
+  },
+  {
+    name: "Công ty Cổ phần Thương mại Thái Kim",
+    mark: "TK",
+    contribution: "50 TV Box đã qua sử dụng · quy đổi 10 triệu đồng",
+    document: sponsorDocuments[1],
+  },
+  {
+    name: "Công ty TNHH DV Bảo vệ Chuyên nghiệp An Ninh Việt Nam",
+    mark: "AN",
+    logo: "Minh Chứng/Tài trợ/Cong ty TNHH DV Bao ve Chuyen nghiep An Ninh Viet Nam (logo ngang).png",
+    contribution: "Tài trợ tiền mặt · 20 triệu đồng",
+    document: sponsorDocuments[2],
+  },
+  {
+    name: "Công ty TNHH Thương mại và Dịch vụ Vilafa",
+    mark: "VI",
+    contribution: "100 TV Box đã qua sử dụng · quy đổi 20 triệu đồng",
+    document: sponsorDocuments[3],
+  },
+  {
+    name: "DAV Media",
+    mark: "DAV",
+    logo: "Minh Chứng/Tài trợ/DAV Media (logo).png",
+    contribution: "30 TV Box đã qua sử dụng",
+    document: sponsorDocuments[4],
+  },
+  {
+    name: "Trạm dừng nghỉ Phước An",
+    mark: "PA",
+    contribution: "Đồng hành với 100 TV Box đã qua sử dụng",
+    document: sponsorDocuments[5],
+  },
+];
+
+const encodeAssetPath = (path) => path.split("/").map(encodeURIComponent).join("/");
+const allDocuments = [...trialDocuments, ...sponsorDocuments];
+const evidenceGrid = document.querySelector("#evidence-grid");
+const evidenceSearch = document.querySelector("#evidence-search");
+const evidenceResult = document.querySelector("#evidence-result");
+const evidenceEmpty = document.querySelector("#evidence-empty");
+const partnerGrid = document.querySelector("#partner-grid");
+const evidenceFilters = document.querySelectorAll(".evidence-filter");
+let activeEvidenceFilter = "all";
+
+if (evidenceGrid && partnerGrid) {
+  evidenceGrid.innerHTML = allDocuments.map((item, index) => {
+    const path = encodeAssetPath(item.path);
+    const description = `${item.name} — ${item.category}`;
+
+    return `
+      <article class="evidence-card" data-group="${item.group}" data-search="${description.toLocaleLowerCase("vi")}">
+        <a class="document-preview" href="${path}" target="_blank" rel="noopener noreferrer" aria-label="Mở giấy xác nhận của ${item.name} ở kích thước đầy đủ">
+          <img src="${path}" alt="Giấy xác nhận của ${item.name}" loading="lazy" decoding="async">
+          <span class="preview-action">Mở bản gốc <svg><use href="#icon-arrow"/></svg></span>
+        </a>
+        <div class="document-copy">
+          <div class="document-meta"><span class="document-kind ${item.group}">${item.groupLabel}</span><span class="document-index">${String(index + 1).padStart(2, "0")}</span></div>
+          <h4>${item.name}</h4>
+          <p>${item.category}</p>
+          <a class="document-link" href="${path}" target="_blank" rel="noopener noreferrer">Xem giấy xác nhận <svg><use href="#icon-arrow"/></svg></a>
+        </div>
+      </article>`;
+  }).join("");
+
+  partnerGrid.innerHTML = sponsors.map((partner) => {
+    const documentPath = encodeAssetPath(partner.document.path);
+    const logo = partner.logo
+      ? `<img src="${encodeAssetPath(partner.logo)}" alt="" loading="lazy" decoding="async">`
+      : `<span class="partner-monogram" aria-hidden="true">${partner.mark}</span>`;
+
+    return `
+      <article class="partner-card">
+        <div class="partner-brand">${logo}</div>
+        <div class="partner-content">
+          <span class="partner-label">ĐƠN VỊ TÀI TRỢ</span>
+          <h4>${partner.name}</h4>
+          <p>${partner.contribution}</p>
+          <a href="${documentPath}" target="_blank" rel="noopener noreferrer">Giấy xác nhận tài trợ <svg><use href="#icon-arrow"/></svg></a>
+        </div>
+      </article>`;
+  }).join("");
+}
+
+const updateEvidenceList = () => {
+  const query = evidenceSearch?.value.trim().toLocaleLowerCase("vi") ?? "";
+  let visibleCount = 0;
+
+  evidenceGrid?.querySelectorAll(".evidence-card").forEach((card) => {
+    const matchesGroup = activeEvidenceFilter === "all" || card.dataset.group === activeEvidenceFilter;
+    const matchesQuery = card.dataset.search.includes(query);
+    const visible = matchesGroup && matchesQuery;
+    card.hidden = !visible;
+    if (visible) visibleCount += 1;
+  });
+
+  if (evidenceResult) evidenceResult.textContent = `Đang hiển thị ${visibleCount} / ${allDocuments.length} giấy xác nhận`;
+  if (evidenceEmpty) evidenceEmpty.hidden = visibleCount > 0;
+};
+
+evidenceSearch?.addEventListener("input", updateEvidenceList);
+evidenceFilters.forEach((filter) => {
+  filter.addEventListener("click", () => {
+    activeEvidenceFilter = filter.dataset.filter;
+    evidenceFilters.forEach((item) => {
+      const isActive = item === filter;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-pressed", String(isActive));
+    });
+    updateEvidenceList();
+  });
+});
+updateEvidenceList();
 
 document.querySelector("#year").textContent = new Date().getFullYear();

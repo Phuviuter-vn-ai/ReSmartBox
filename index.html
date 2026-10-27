@@ -32,6 +32,8 @@
           <a href="#cau-chuyen">Câu chuyện</a>
           <a href="#giai-phap">Giải pháp</a>
           <a href="#hanh-trinh">Hành trình</a>
+          <a href="#minh-chung">Minh chứng</a>
+          <a href="#doi-tac">Đối tác</a>
           <a href="#doi-ngu">Đội ngũ</a>
           <a class="nav-cta" href="#ket-noi">Đồng hành cùng chúng tôi <svg><use href="#icon-arrow"/></svg></a>
         </nav>
@@ -163,12 +165,46 @@
         </div>
       </section>
 
-      <section class="section proof-section">
-        <div class="container proof-grid">
-          <div class="proof-copy"><span class="eyebrow"><span class="eyebrow-dot"></span> Niềm tin được xây bằng trải nghiệm</span><h2>Không chỉ là lời hứa.<br><span>Là những lần dùng thật.</span></h2><p>ReSmartBox đã được đưa đến các đơn vị dùng thử trong những bối cảnh khác nhau — từ cửa hàng đồ uống đến cơ sở sản xuất nông nghiệp.</p><div class="proof-score"><strong>4,8</strong><span><span class="stars">★★★★★</span><br>Điểm hài lòng trung bình / 5</span></div><p class="proof-note">Theo phiếu đánh giá dùng thử của 2 đơn vị. Kết quả phản ánh trải nghiệm tại thời điểm thử nghiệm.</p></div>
-          <div class="proof-docs">
-            <article class="proof-card"><div class="proof-card-top"><span class="doc-icon">01</span><span class="doc-tag">ĐƠN VỊ DÙNG THỬ</span></div><h3>Hoàng Anh Agritech</h3><p>Cơ sở sản xuất phân bón, chế phẩm sinh học</p><div class="proof-detail"><span>03 thiết bị</span><span>Tháng 09–10 / 2026</span></div><img src="Anh_minh_chung_giayto/1793067992603_2398951114998525015_g8308076797534140497_e4f692ad2c030b2be1e7d82448f57cbe.jpg" alt="Giấy xác nhận dùng thử ReSmartBox của Hoàng Anh Agritech" loading="lazy"></article>
-            <article class="proof-card proof-card-offset"><div class="proof-card-top"><span class="doc-icon">02</span><span class="doc-tag">ĐƠN VỊ DÙNG THỬ</span></div><h3>Thái Kim</h3><p>Kho bán buôn bia, đồ uống và nước giải khát</p><div class="proof-detail"><span>02 thiết bị</span><span>Tháng 10 / 2026</span></div><img src="Anh_minh_chung_giayto/1793067992499_2398951114998525015_g8308076797534140497_ea5a85cb4ce8bb9440c2c4b391d7ed78.jpg" alt="Giấy xác nhận dùng thử ReSmartBox của Thái Kim" loading="lazy"></article>
+      <section class="section evidence-section" id="minh-chung">
+        <div class="container">
+          <header class="evidence-heading">
+            <div class="evidence-intro">
+              <span class="eyebrow"><span class="eyebrow-dot"></span> Mạng lưới trải nghiệm & đồng hành</span>
+              <h2>Công nghệ được tin tưởng<br><span>khi tạo ra giá trị thật.</span></h2>
+              <p>Từng giấy xác nhận là một dấu mốc hợp tác — từ trường học, cơ sở dịch vụ đến doanh nghiệp cùng chung tay tái sử dụng thiết bị.</p>
+            </div>
+            <div class="evidence-stats" aria-label="Tổng quan minh chứng dự án">
+              <div><strong>16</strong><span>đơn vị dùng thử</span></div>
+              <div><strong>06</strong><span>đơn vị tài trợ</span></div>
+              <div><strong>22</strong><span>giấy xác nhận</span></div>
+            </div>
+          </header>
+
+          <div class="partners-block" id="doi-tac">
+            <div class="partners-heading">
+              <div><span class="eyebrow"><span class="eyebrow-dot"></span> Chung tay đưa dự án đi xa hơn</span><h3>Đơn vị tài trợ & hợp tác</h3></div>
+              <p>Trân trọng sự đóng góp thiết bị, nguồn lực và cơ hội thử nghiệm từ các đơn vị đồng hành.</p>
+            </div>
+            <div class="partner-grid" id="partner-grid" aria-live="polite"></div>
+          </div>
+
+          <div class="evidence-archive" id="tai-lieu">
+            <div class="archive-heading">
+              <div><span class="eyebrow"><span class="eyebrow-dot"></span> Hồ sơ dự án</span><h3>Toàn bộ giấy xác nhận</h3></div>
+              <p>Chọn từng tài liệu để xem bản đầy đủ. Hình ảnh mở ở độ phân giải gốc trong tab mới.</p>
+            </div>
+            <div class="archive-controls">
+              <label class="evidence-search"><span class="search-icon" aria-hidden="true">⌕</span><span class="visually-hidden">Tìm đơn vị</span><input id="evidence-search" type="search" placeholder="Tìm tên đơn vị..." autocomplete="off"></label>
+              <div class="evidence-filters" role="group" aria-label="Lọc giấy xác nhận">
+                <button class="evidence-filter is-active" type="button" data-filter="all" aria-pressed="true">Tất cả <span>22</span></button>
+                <button class="evidence-filter" type="button" data-filter="trial" aria-pressed="false">Đã thử nghiệm <span>16</span></button>
+                <button class="evidence-filter" type="button" data-filter="sponsor" aria-pressed="false">Tài trợ <span>06</span></button>
+              </div>
+            </div>
+            <p class="archive-result" id="evidence-result" aria-live="polite"></p>
+            <div class="evidence-grid" id="evidence-grid"></div>
+            <p class="evidence-empty" id="evidence-empty" hidden>Không tìm thấy đơn vị phù hợp. Hãy thử từ khóa khác.</p>
+            <p class="evidence-note"><svg><use href="#icon-spark"/></svg><span>Tài liệu được cung cấp để minh chứng hoạt động dùng thử và đồng hành cùng dự án ReSmartBox.</span></p>
           </div>
         </div>
       </section>
