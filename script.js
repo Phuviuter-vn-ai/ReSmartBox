@@ -156,9 +156,13 @@ const evidenceGrid = document.querySelector("#evidence-grid");
 const evidenceSearch = document.querySelector("#evidence-search");
 const evidenceResult = document.querySelector("#evidence-result");
 const evidenceEmpty = document.querySelector("#evidence-empty");
+const evidenceToggle = document.querySelector("#evidence-toggle");
+const evidenceToggleLabel = document.querySelector("#evidence-toggle-label");
 const partnerGrid = document.querySelector("#partner-grid");
 const evidenceFilters = document.querySelectorAll(".evidence-filter");
 let activeEvidenceFilter = "all";
+let evidenceExpanded = false;
+const initialEvidenceLimit = 6;
 
 if (evidenceGrid && partnerGrid) {
   evidenceGrid.innerHTML = allDocuments.map((item, index) => {
@@ -201,23 +205,42 @@ if (evidenceGrid && partnerGrid) {
 
 const updateEvidenceList = () => {
   const query = evidenceSearch?.value.trim().toLocaleLowerCase("vi") ?? "";
-  let visibleCount = 0;
-
-  evidenceGrid?.querySelectorAll(".evidence-card").forEach((card) => {
+  const matchingCards = [...(evidenceGrid?.querySelectorAll(".evidence-card") ?? [])].filter((card) => {
     const matchesGroup = activeEvidenceFilter === "all" || card.dataset.group === activeEvidenceFilter;
     const matchesQuery = card.dataset.search.includes(query);
-    const visible = matchesGroup && matchesQuery;
-    card.hidden = !visible;
-    if (visible) visibleCount += 1;
+    return matchesGroup && matchesQuery;
+  });
+  const visibleCount = evidenceExpanded
+    ? matchingCards.length
+    : Math.min(matchingCards.length, initialEvidenceLimit);
+  const visibleCards = new Set(matchingCards.slice(0, visibleCount));
+
+  evidenceGrid?.querySelectorAll(".evidence-card").forEach((card) => {
+    card.hidden = !visibleCards.has(card);
   });
 
-  if (evidenceResult) evidenceResult.textContent = `Đang hiển thị ${visibleCount} / ${allDocuments.length} giấy xác nhận`;
-  if (evidenceEmpty) evidenceEmpty.hidden = visibleCount > 0;
+  if (evidenceResult) evidenceResult.textContent = `Đang hiển thị ${visibleCount} / ${matchingCards.length} giấy xác nhận`;
+  if (evidenceEmpty) evidenceEmpty.hidden = matchingCards.length > 0;
+  if (evidenceToggle && evidenceToggleLabel) {
+    evidenceToggle.hidden = matchingCards.length <= initialEvidenceLimit;
+    evidenceToggle.setAttribute("aria-expanded", String(evidenceExpanded));
+    evidenceToggleLabel.textContent = evidenceExpanded
+      ? "Thu gọn danh sách"
+      : `Xem tất cả ${matchingCards.length} giấy xác nhận`;
+  }
 };
 
-evidenceSearch?.addEventListener("input", updateEvidenceList);
+evidenceSearch?.addEventListener("input", () => {
+  evidenceExpanded = false;
+  updateEvidenceList();
+});
+evidenceToggle?.addEventListener("click", () => {
+  evidenceExpanded = !evidenceExpanded;
+  updateEvidenceList();
+});
 evidenceFilters.forEach((filter) => {
   filter.addEventListener("click", () => {
+    evidenceExpanded = false;
     activeEvidenceFilter = filter.dataset.filter;
     evidenceFilters.forEach((item) => {
       const isActive = item === filter;
