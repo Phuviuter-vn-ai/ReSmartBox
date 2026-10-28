@@ -18,6 +18,8 @@ records for `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and
 `185.199.111.153`. Point `www` to `phuviuter-vn-ai.github.io` with a CNAME
 record. After DNS propagates, verify the custom domain in **Settings → Pages**
 and enable **Enforce HTTPS** when GitHub makes it available.
+See [DOMAIN-DNS-SETUP.md](./DOMAIN-DNS-SETUP.md) for a step-by-step DNS
+configuration and verification checklist.
 
 Keep the `Anh_lap_dat`, `Anh_thanhvien_va_chuyengia`, `video_demo`, and
 `Minh Chứng` folders in the repository so the page can load its images,
